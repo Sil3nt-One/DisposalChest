@@ -130,6 +130,8 @@ public class DisposalChest extends JavaPlugin {
                 });
             }
         }, 100, 200);
+
+        this.getCommand("trashchest").setExecutor(new DisposalChestCommandExecutor(this));
     }
 
     private void clearTrashChests() {
