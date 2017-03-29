@@ -3,6 +3,14 @@ main: com.sil3ntone.disposalchest.DisposalChest
 version: ${project.version}
 author: Sil3nt_One
 commands:
-   trashchest:
-      description: Help on Trash Chests.
-      usage: /trashchest
+    trashchest:
+        description: Help on Trash Chests.
+        usage: /trashchest
+
+permissions:
+    disposalchest.*:
+        description: All perms for DisposalChest
+        default: op
+    disposalchest.bypass:
+        description: Bypass DisposalChest limits
+        default: op

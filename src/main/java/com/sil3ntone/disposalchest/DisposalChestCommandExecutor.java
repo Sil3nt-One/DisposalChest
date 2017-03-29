@@ -25,7 +25,11 @@ public class DisposalChestCommandExecutor implements CommandExecutor {
             if(playerIdxInList > -1) {
                 currentNoOfTrashChests = DisposalChest.trashChestOwnerLimitList.get(playerIdxInList).getCount();
             }
-            p.sendMessage(String.format("§6" + DisposalChest.TAG + ": Your current usage %d/%d chests", currentNoOfTrashChests, DisposalChest.trashChestLimitPerPlayer));
+            int maxLimit = DisposalChest.trashChestLimitPerPlayer;
+            if(p.hasPermission("disposalchest.bypass")) {
+                maxLimit = 999;
+            }
+            p.sendMessage(String.format("§6" + DisposalChest.TAG + ": Your current usage %d/%d chests", currentNoOfTrashChests, maxLimit));
             return true;
         }
         else {

@@ -62,9 +62,13 @@ public class DisposalChestBlockListener implements Listener {
             int playerIdxInList = DisposalChest.trashChestOwnerLimitList.indexOf(new TrashChestOwner(p.getUniqueId().toString(), -1));
             if(playerIdxInList > -1) {
                 int currentNoOfTrashChests = DisposalChest.trashChestOwnerLimitList.get(playerIdxInList).getCount();
-                if(currentNoOfTrashChests >= DisposalChest.trashChestLimitPerPlayer) {
+                int maxLimit = DisposalChest.trashChestLimitPerPlayer;
+                if(p.hasPermission("disposalchest.bypass")) {
+                    maxLimit = 999;
+                }
+                if(currentNoOfTrashChests >= maxLimit) {
                     e.setCancelled(true);
-                    p.sendMessage(String.format("§c" + DisposalChest.TAG +  ": You have exceeded limit of %d %s!", DisposalChest.trashChestLimitPerPlayer, (DisposalChest.trashChestLimitPerPlayer == 1 ? "chest" : "chests")));
+                    p.sendMessage(String.format("§c" + DisposalChest.TAG +  ": You have exceeded limit of %d %s!", maxLimit, (maxLimit == 1 ? "chest" : "chests")));
                     return;
                 }
             }
