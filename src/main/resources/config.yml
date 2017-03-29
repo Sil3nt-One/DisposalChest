@@ -3,6 +3,7 @@ mysqluser:
 mysqlpass:
 mysqldatabase: disposal_chest_test
 mysqltable_main: so_dc_main
+trashChestLimitPerPlayer: 2
 minChestClearTime: 30
 maxChestClearTime: 300
 minTPS: 10

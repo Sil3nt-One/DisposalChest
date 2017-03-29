@@ -32,7 +32,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class DisposalChest extends JavaPlugin {
 
     public static final String TAG = "[DisposalChest]";
-    public static final int perPlayerChestLimit = 2;
 
     public static DisposalChest plugin;
     public static String mysqlhost;
@@ -40,6 +39,9 @@ public class DisposalChest extends JavaPlugin {
     public static String mysqlpass;
     public static String mysqldatabase;
     public static String mysqltable_main;
+
+    public static int trashChestLimitPerPlayer;
+
     private static float tps;
 
     public static int minChestClearTime;
@@ -234,11 +236,14 @@ public class DisposalChest extends JavaPlugin {
             DisposalChest.mysqldatabase = config.getString("mysqldatabase");
             DisposalChest.mysqltable_main = config.getString("mysqltable_main");
 
+            DisposalChest.trashChestLimitPerPlayer = config.getInt("trashChestLimitPerPlayer");
+
             DisposalChest.minChestClearTime = config.getInt("minChestClearTime");
             DisposalChest.maxChestClearTime = config.getInt("maxChestClearTime");
             DisposalChest.minTPS = config.getInt("minTPS");
             DisposalChest.maxTPS = config.getInt("maxTPS");
             DisposalChest.minChestClearBatchSize = config.getInt("minChestClearBatchSize");
+
         } catch (Exception e) {
             e.printStackTrace();
         }
