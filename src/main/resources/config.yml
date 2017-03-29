@@ -1,0 +1,10 @@
+mysqlhost: 127.0.0.1
+mysqluser:
+mysqlpass:
+mysqldatabase: disposal_chest_test
+mysqltable_main: so_dc_main
+minChestClearTime: 30
+maxChestClearTime: 300
+minTPS: 10
+maxTPS: 20
+minChestClearBatchSize: 10

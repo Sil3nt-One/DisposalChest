@@ -1,0 +1,4 @@
+name: ${project.artifactId}
+main: com.sil3ntone.disposalchest.DisposalChest
+version: ${project.version}
+author: Sil3nt_One
